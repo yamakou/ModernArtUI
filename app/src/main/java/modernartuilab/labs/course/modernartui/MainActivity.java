@@ -28,7 +28,6 @@ public class MainActivity extends ActionBarActivity {
     private TextView rect_grey;
     private DialogFragment mDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +83,6 @@ public class MainActivity extends ActionBarActivity {
             hsv[0] = hsv[0]% 360;
         }
 
-        Log.i(TAG, "changeColor " + base_color + " " +hsv[0]);
         return Color.HSVToColor(hsv);
     }
 
@@ -127,7 +125,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.top_menu, menu);
         return true;
     }
 
@@ -139,7 +137,9 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.more_information) {
+
+        if(id == R.id.more_information)
+        {
             // Create a new AlertDialogFragment
             mDialog = AlertDialogFragment.newInstance();
 
